@@ -1,0 +1,25 @@
+
+# autoreconfig generated; clean-repo.sh removed
+/INSTALL
+/Makefile.in
+/aclocal.m4
+/autom4te.cache/
+/bin/Makefile.in
+/compile
+/configure
+/depcomp
+/install-sh
+/missing
+
+# configure generated; clean-repo.sh removed
+/Makefile
+/bin/Makefile
+/config.log
+/config.status
+/src/.deps/
+
+# make generated; make clean removed
+/bin/easycwmpd
+src/.dirstamp
+*.o
+
