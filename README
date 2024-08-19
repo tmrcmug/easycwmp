@@ -13,8 +13,8 @@ EasyCwmp is a GPLv2 open source implementation of the TR069 cwmp standard. EasyC
     libuci
     libcurl
     json-c
-    libubox: minimum version [git version: 0608d1299546d4af1facc271a090cb2abb8c6105, date: 2012-05-30]
-    libubus: minimum version [git version: a62e2f8c15a65efb1a82404d8f31e3bfc1cbe7d9, date: 2012-06-01]
+    libubox
+    libubus
     microxml: microxml is a fork of Mini-XML, it's being used to parse XML blocks passed between ACS and the client and it's published by freecwmp guys:
 		microxml source:
 		git clone https://github.com/pivasoftware/microxml.git
@@ -113,25 +113,23 @@ The digest authentication with ACS server will not work if you build libcurl wit
 json-c
 ======
 
-git clone git://github.com/json-c/json-c.git /opt/git/json-c
-cd /opt/git/json-c/
-
-Generate configuration files:
-
-autoreconf -i
+git clone https://github.com/json-c/json-c.git json-c
+cd json-c/
 
 Configure:
 
-./configure --prefix=/usr
+mkdir build
+cd build/
+cmake ../CMakeLists.txt
+../cmake-configure --prefix=/usr/local
 
 Build:
-
 make
 
 Install:
 
 sudo make install
-sudo ln -sf /usr/include/json-c /usr/include/json
+sudo ln -sf /usr/local/json-c /usr/include/json
 
  
 

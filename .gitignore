@@ -23,3 +23,5 @@
 src/.dirstamp
 *.o
 
+# dependent pacakge build dirs
+/depends/
