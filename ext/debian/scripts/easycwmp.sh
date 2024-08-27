@@ -399,11 +399,8 @@ handle_action() {
 		return
 	fi
 	if [ "$action" = "factory_reset" ]; then
-		if [ "`which jffs2_mark_erase`" != "" ]; then
-			jffs2_mark_erase "rootfs_data"
-		else
-			/sbin/jffs2mark -y
-		fi
+		cp /var/lib/easycwmp/factory_defaults/easycwmp.conf /etc/config/easycwmp
+		rm -f /var/lib/easycwmp/data/.backup.xml
 		sync
 		reboot
 	fi

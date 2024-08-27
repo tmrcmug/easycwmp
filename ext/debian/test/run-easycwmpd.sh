@@ -10,6 +10,11 @@ err_exit() {
 setup_env_var() {
     export UCI_CONFIG_DIR="/etc/config"
     export UBUS_SOCKET="/var/run/ubus.sock"
+    [ -f /etc/default/easycwmp ] && {
+        set -o allexport
+        . /etc/default/easycwmp
+        set +o allexport
+    }
 }
 
 verify_root_access() {

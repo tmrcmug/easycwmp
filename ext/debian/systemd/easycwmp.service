@@ -1,0 +1,14 @@
+[Unit]
+Description=EasyCwmp TR-069 CWMP Agent
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+Environment="UCI_CONFIG_DIR=/etc/config"
+Environment="UBUS_SOCKET=/var/run/ubus.sock"
+EnvironmentFile=-/etc/default/easycwmp
+ExecStart=/usr/sbin/easycwmpd -f -b
+
+[Install]
+WantedBy=multi-user.target
